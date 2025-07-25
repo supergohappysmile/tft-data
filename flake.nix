@@ -1,5 +1,5 @@
 {
-  description = "Python kernel for VS Code notebooks named 'test'";
+  description = "Python kernel for VS Code notebooks named \"select this one for tft data\"";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -12,8 +12,9 @@
         pkgs = import nixpkgs { inherit system; };
         pythonEnv = pkgs.python3.withPackages (ps: with ps; [
           ipykernel
+          notebook
           pandas
-          numpy
+          jupyter
           # optionally add numpy, pandas, matplotlib, etc.
         ]);
       in {
@@ -22,7 +23,7 @@
           packages = [ pythonEnv ];
           shellHook = ''
             # Register the kernel under the name "test" each time you enter the shell
-            ${pythonEnv.interpreter} -m ipykernel install --user --name=test --display-name "Python (test)"
+            ${pythonEnv.interpreter} -m ipykernel install --user --name=test --display-name "select this one for tft data"
           '';
         };
       });
