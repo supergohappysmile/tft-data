@@ -14,7 +14,7 @@
           ipykernel
           notebook
           pandas
-          jupyter
+          pip
           # optionally add numpy, pandas, matplotlib, etc.
         ]);
       in {
