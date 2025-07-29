@@ -14,6 +14,10 @@
           ipykernel
           notebook
           pandas
+          gspread
+          gspread_dataframe
+          # gspread-pandas
+          oauth2client
           pip
           # optionally add numpy, pandas, matplotlib, etc.
         ]);
@@ -22,8 +26,9 @@
           name = "test";
           packages = [ pythonEnv ];
           shellHook = ''
+          echo "${pythonEnv}  <-- select this in notebook"
             # Register the kernel under the name "test" each time you enter the shell
-            ${pythonEnv.interpreter} -m ipykernel install --user --name=test --display-name "select this one for tft data"
+            ${pythonEnv.interpreter} -m ipykernel install --user --name=test --display-name "${pythonEnv}"
           '';
         };
       });
