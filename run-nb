@@ -1,0 +1,10 @@
+read -p "Do you want to run Jupyter Notebook? (y/n): " ans
+case "$ans" in
+    y|Y|yes|Yes)
+    jupyter notebook
+    echo "Jupyter exited with status $?"
+    ;;
+    *)
+    echo "Not starting Jupyter."
+    ;;
+esac

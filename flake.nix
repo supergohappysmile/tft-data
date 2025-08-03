@@ -33,7 +33,7 @@
             ]))
           ];
           shellHook = "
-          jupyter notebook
+            ./run-nb
           ";
         };
       }
